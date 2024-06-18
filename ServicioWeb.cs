@@ -4,7 +4,9 @@ public class ServicioWeb
 {
     public async Task<Root> GetPersonaje()
     {
-        var url = "https://www.superheroapi.com/api.php/5248ed3c2a550909d2dd451fe25e718f/2";
+        Random random = new Random();
+        int idPersonajes = random.Next(0,732);
+        var url = $"https://www.superheroapi.com/api.php/5248ed3c2a550909d2dd451fe25e718f/{idPersonajes}";
 
         try
         {

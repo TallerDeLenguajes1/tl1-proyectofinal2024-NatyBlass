@@ -1,66 +1,5 @@
 // Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
 using System.Text.Json.Serialization;
-
-    public class Appearance
-    {
-        [JsonPropertyName("gender")]
-        public string gender { get; set; }
-
-        [JsonPropertyName("race")]
-        public string race { get; set; }
-
-        [JsonPropertyName("height")]
-        public List<string> height { get; set; }
-
-        [JsonPropertyName("weight")]
-        public List<string> weight { get; set; }
-
-        [JsonPropertyName("eye-color")]
-        public string eyecolor { get; set; }
-
-        [JsonPropertyName("hair-color")]
-        public string haircolor { get; set; }
-    }
-
-    public class Biography
-    {
-        [JsonPropertyName("full-name")]
-        public string fullname { get; set; }
-
-        [JsonPropertyName("alter-egos")]
-        public string alteregos { get; set; }
-
-        [JsonPropertyName("aliases")]
-        public List<string> aliases { get; set; }
-
-        [JsonPropertyName("place-of-birth")]
-        public string placeofbirth { get; set; }
-
-        [JsonPropertyName("first-appearance")]
-        public string firstappearance { get; set; }
-
-        [JsonPropertyName("publisher")]
-        public string publisher { get; set; }
-
-        [JsonPropertyName("alignment")]
-        public string alignment { get; set; }
-    }
-
-    public class Connections
-    {
-        [JsonPropertyName("group-affiliation")]
-        public string groupaffiliation { get; set; }
-
-        [JsonPropertyName("relatives")]
-        public string relatives { get; set; }
-    }
-
-    public class Image
-    {
-        [JsonPropertyName("url")]
-        public string url { get; set; }
-    }
-
     public class Powerstats
     {
         [JsonPropertyName("intelligence")]
@@ -96,28 +35,4 @@ using System.Text.Json.Serialization;
         [JsonPropertyName("powerstats")]
         public Powerstats powerstats { get; set; }
 
-        [JsonPropertyName("biography")]
-        public Biography biography { get; set; }
-
-        [JsonPropertyName("appearance")]
-        public Appearance appearance { get; set; }
-
-        [JsonPropertyName("work")]
-        public Work work { get; set; }
-
-        [JsonPropertyName("connections")]
-        public Connections connections { get; set; }
-
-        [JsonPropertyName("image")]
-        public Image image { get; set; }
     }
-
-    public class Work
-    {
-        [JsonPropertyName("occupation")]
-        public string occupation { get; set; }
-
-        [JsonPropertyName("base")]
-        public string @base { get; set; }
-    }
-
