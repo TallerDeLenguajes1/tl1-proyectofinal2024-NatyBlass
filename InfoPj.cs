@@ -1,46 +1,6 @@
-// // https://superheroapi.com/
-// // Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
+// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
 using System.Text.Json.Serialization;
 
-//     public class EstadisticasPj
-//     {
-//         [JsonPropertyName("intelligence")]
-//         public string Inteligencia { get; set; }
-
-//         [JsonPropertyName("strength")]
-//         public string Fuerza { get; set; }
-
-//         [JsonPropertyName("speed")]
-//         public string Velocidad { get; set; }
-
-//         [JsonPropertyName("durability")]
-//         public string Durabilidad { get; set; }
-
-//         [JsonPropertyName("power")]
-//         public string Poder { get; set; }
-
-//         [JsonPropertyName("combat")]
-//         public string Combate { get; set; }
-//     }
-
-//     public class InfoPersonaje
-//     {
-//         [JsonPropertyName("response")]
-//         public string response { get; set; }
-
-//         [JsonPropertyName("id")]
-//         public string id { get; set; }
-
-//         [JsonPropertyName("name")]
-//         public string Nombre { get; set; }
-
-//         [JsonPropertyName("powerstats")]
-//         public EstadisticasPj Estadisticas { get; set; }
-
-//     }
-
-
-// Root myDeserializedClass = JsonSerializer.Deserialize<Root>(myJsonResponse);
     public class Appearance
     {
         [JsonPropertyName("gender")]
@@ -160,5 +120,4 @@ using System.Text.Json.Serialization;
         [JsonPropertyName("base")]
         public string @base { get; set; }
     }
-
 

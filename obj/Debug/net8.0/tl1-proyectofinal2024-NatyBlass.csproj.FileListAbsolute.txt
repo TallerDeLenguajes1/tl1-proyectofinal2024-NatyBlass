@@ -1,0 +1,15 @@
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.sourcelink.json
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.exe
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.deps.json
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.runtimeconfig.json
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.pdb
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\refint\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.pdb
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\ref\tl1-proyectofinal2024-NatyBlass.dll

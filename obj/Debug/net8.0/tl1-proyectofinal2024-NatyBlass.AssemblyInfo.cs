@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("taller proyecto final")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("tl1-proyectofinal2024-NatyBlass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a6336b81c5fa403c87cf1053a465ea2dab062d2")]
-[assembly: System.Reflection.AssemblyProductAttribute("taller proyecto final")]
-[assembly: System.Reflection.AssemblyTitleAttribute("taller proyecto final")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+101c66eb84fa63ef72db2f2fded021a657f10095")]
+[assembly: System.Reflection.AssemblyProductAttribute("tl1-proyectofinal2024-NatyBlass")]
+[assembly: System.Reflection.AssemblyTitleAttribute("tl1-proyectofinal2024-NatyBlass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
