@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Desktop\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\taller proyecto final\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Desktop\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\taller proyecto final\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\taller proyecto final\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj",
         "projectName": "tl1-proyectofinal2024-NatyBlass",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\taller proyecto final\\tl1-proyectofinal2024-NatyBlass\\tl1-proyectofinal2024-NatyBlass.csproj",
         "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\tl1-proyectofinal2024-NatyBlass\\obj\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\taller proyecto final\\tl1-proyectofinal2024-NatyBlass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
