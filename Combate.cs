@@ -9,7 +9,23 @@ public class Combate
         while (jug1.Durabilidad > 0 && jug2.Durabilidad > 0)
         {
             RealizarTurno(jug1, jug2);
+
+            if (jug2.Durabilidad <= 0)
+            {
+                Console.WriteLine($"{jug1.Nombre} ha ganado el combate");
+                return jug1;
+            }
+
+            RealizarTurno(jug2, jug1);
+            if (jug1.Durabilidad <= 0)
+            {
+                Console.WriteLine($"{jug2.Nombre} ha ganado el combate");
+                return jug2;
+            }
+
         }
+
+        return null; // en caso de empates, aunque es poco probable que suceda xd
     }
 
     private void RealizarTurno(GeneracionPersonaje ataca, GeneracionPersonaje defiende)
