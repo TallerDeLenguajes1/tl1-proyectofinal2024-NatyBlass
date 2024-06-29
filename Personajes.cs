@@ -56,7 +56,9 @@ public class FabricaDePersonajes
         }
         else
         {
-            return 0; // Valor predeterminado si la conversión falla
+            Random random = new Random();
+            int randomStats = random.Next(0,101); //Para que no retorne 0 especificamente, le pido un aleatorio
+            return randomStats; // Valor predeterminado si la conversión falla
         }
     }
 

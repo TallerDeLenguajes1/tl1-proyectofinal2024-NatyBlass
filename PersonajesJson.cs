@@ -7,7 +7,7 @@ public class PersonajesJson
 {
     public void GuardarPjs(List<GeneracionPersonaje> personajes, string nombreArchivo)
     {
-        string jsonString = JsonSerializer.Serialize(personajes);
+        string jsonString = JsonSerializer.Serialize(personajes, new JsonSerializerOptions{WriteIndented = true}); // WriteIndented mejora la legibilidad del string en JSON.
         File.WriteAllText(nombreArchivo, jsonString);
     }
 

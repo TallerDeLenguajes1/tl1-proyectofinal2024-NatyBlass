@@ -21,7 +21,7 @@ else
     personajesJson.GuardarPjs(personajes, "personajes.json");
 }
 
-//Para comprobar que se estén cargando bien los pjs
+//Para comprobar que se estén cargando bien los pjs.
 foreach (var personaje in personajes)
 {
     Console.WriteLine($"Nombre: {personaje.Nombre}, Inteligencia: {personaje.Inteligencia}, Fuerza: {personaje.Fuerza}, Velocidad: {personaje.Velocidad}, Durabilidad: {personaje.Durabilidad}, Poder: {personaje.Poder}, Combate: {personaje.Combate}, Id: {personaje.Id}");
