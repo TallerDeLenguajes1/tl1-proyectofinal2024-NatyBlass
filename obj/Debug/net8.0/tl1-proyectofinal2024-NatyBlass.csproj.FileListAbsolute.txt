@@ -28,3 +28,18 @@ C:\Users\Alumno\Desktop\taller proyecto final\tl1-proyectofinal2024-NatyBlass\ob
 C:\Users\Alumno\Desktop\taller proyecto final\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.pdb
 C:\Users\Alumno\Desktop\taller proyecto final\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.genruntimeconfig.cache
 C:\Users\Alumno\Desktop\taller proyecto final\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\ref\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.AssemblyInfoInputs.cache
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.AssemblyInfo.cs
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.csproj.CoreCompileInputs.cache
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.sourcelink.json
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\refint\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.pdb
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.exe
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.deps.json
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.runtimeconfig.json
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.dll
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\bin\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.pdb
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\tl1-proyectofinal2024-NatyBlass.genruntimeconfig.cache
+C:\Users\Natalia\Documents\FACULTAD 2024\Taller de Lenguajes 1\tl1-proyectofinal2024-NatyBlass\obj\Debug\net8.0\ref\tl1-proyectofinal2024-NatyBlass.dll

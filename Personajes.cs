@@ -34,16 +34,30 @@ public class FabricaDePersonajes
         GeneracionPersonaje nuevoPersonaje = new GeneracionPersonaje
         {
             Nombre = personaje.name,
-            Inteligencia = int.Parse(personaje.powerstats.intelligence),
-            Fuerza = int.Parse(personaje.powerstats.strength),
-            Velocidad = int.Parse(personaje.powerstats.speed),
-            Durabilidad = int.Parse(personaje.powerstats.durability),
-            Poder = int.Parse(personaje.powerstats.power),
-            Combate = int.Parse(personaje.powerstats.combat),
-            Id = int.Parse(personaje.id)
+            Inteligencia = TryParseInt(personaje.powerstats.intelligence),
+            Fuerza = TryParseInt(personaje.powerstats.strength),
+            Velocidad = TryParseInt(personaje.powerstats.speed),
+            Durabilidad = TryParseInt(personaje.powerstats.durability),
+            Poder = TryParseInt(personaje.powerstats.power),
+            Combate = TryParseInt(personaje.powerstats.combat),
+            Id = TryParseInt(personaje.id)
         };
 
         return nuevoPersonaje;
+    }
+
+
+    //Para Verificar antes de convertir string a enteros : - recomendación del chat gpt debido a que me dio un error de la nada - 
+    private int TryParseInt(string value)
+    {
+        if (int.TryParse(value, out int result))
+        {
+            return result;
+        }
+        else
+        {
+            return 0; // Valor predeterminado si la conversión falla
+        }
     }
 
 
