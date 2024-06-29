@@ -1,3 +1,6 @@
+using System.ComponentModel;
+using System.Reflection.Metadata.Ecma335;
+
 public class GeneracionPersonaje
 {
     private int inteligencia;
@@ -22,17 +25,26 @@ public class GeneracionPersonaje
 public class FabricaDePersonajes
 {
     ServicioWeb servicioWeb = new ServicioWeb();
-    var personaje = await servicioWeb.GetPersonaje();
 
-    GeneracionPersonaje nuevoPersonaje = new GeneracionPersonaje();
+    //Task me permite ejecutar una operacion de forma asincronica sin "bloquear" el hilo principal
+    public async Task<GeneracionPersonaje> CrearPersonaje() //Debo ponerlo como un método asincronico para que el await no de problema
+    {
+        var personaje = await servicioWeb.GetPersonaje();
 
-    nuevoPersonaje.Nombre = personaje.name;
-    nuevoPersonaje.Inteligencia = int.Parse(personaje.powerstats.intelligence);
-    nuevoPersonaje.Fuerza = int.Parse(personaje.powerstats.strength);
-    nuevoPersonaje.Velocidad = int.Parse(personaje.powerstats.speed);
-    nuevoPersonaje.Durabilidad = int.Parse(personaje.powerstats.durability);
-    nuevoPersonaje.Poder = int.Parse(personaje.powerstats.power);
-    nuevoPersonaje.Combate = int.Parse(personaje.powerstats.combat);
-    nuevoPersonaje.Id = int.Parse(personaje.id);
+        GeneracionPersonaje nuevoPersonaje = new GeneracionPersonaje
+        {
+            Nombre = personaje.name,
+            Inteligencia = int.Parse(personaje.powerstats.intelligence),
+            Fuerza = int.Parse(personaje.powerstats.strength),
+            Velocidad = int.Parse(personaje.powerstats.speed),
+            Durabilidad = int.Parse(personaje.powerstats.durability),
+            Poder = int.Parse(personaje.powerstats.power),
+            Combate = int.Parse(personaje.powerstats.combat),
+            Id = int.Parse(personaje.id)
+        };
+
+        return nuevoPersonaje;
+    }
+
 
 }
