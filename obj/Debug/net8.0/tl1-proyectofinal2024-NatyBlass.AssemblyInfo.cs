@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tl1-proyectofinal2024-NatyBlass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502975c2607cf3ac78aca143119a3a9de4e5821c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+433d01ef0ca0bb68bc47d5d09f7493fc26d799b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("tl1-proyectofinal2024-NatyBlass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tl1-proyectofinal2024-NatyBlass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
