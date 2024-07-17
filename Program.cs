@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+ComplementoGrafico.MostrarTitulo();
+
+
 PersonajesJson personajesJson = new PersonajesJson();
 List<GeneracionPersonaje> personajes;
 
