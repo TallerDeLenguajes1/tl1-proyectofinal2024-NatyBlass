@@ -1,4 +1,5 @@
 using System.Runtime;
+using System.Security;
 
 public class Combate
 {
@@ -14,7 +15,9 @@ public class Combate
 
             if (jug2.Durabilidad <= 0)
             {
-                Console.WriteLine($"{jug1.Nombre} ha ganado el combate");
+                jug2.Durabilidad = 0; // Soluciono el "error" de que la vida es >0
+                Console.WriteLine($"{jug2.Nombre} ha sido derrotado");
+                
                 return jug1;
             }
 
@@ -48,6 +51,22 @@ public class Combate
         daño = jug.Fuerza + jug.Poder / 2;
 
         return daño;
+    }
+
+    private void MejorarAtributo(GeneracionPersonaje personaje)
+    {
+        ComplementoGrafico.MejoraPersonaje();
+        Console.WriteLine("Seleccione un Atributo a Mejorar");
+        Console.WriteLine("1 - Inteligencia");
+        Console.WriteLine("2 - Fuerza");
+        Console.WriteLine("3 - Velocidad");
+        Console.WriteLine("4 - Durabilidad");
+        Console.WriteLine("5 - Poder");
+        Console.WriteLine("6 - Combate");
+
+        string opc = Console.ReadLine();
+        int atributo;
+
     }
 
 

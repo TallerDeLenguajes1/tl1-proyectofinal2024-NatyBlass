@@ -20,6 +20,38 @@ public class GeneracionPersonaje
     public int Combate { get => combate; set => combate = value; }
     public int Id { get => id; set => id = value; }
     public string Nombre { get => nombre; set => nombre = value; }
+
+    //Agregado de funcion para mejorar atributos
+
+    public void MejorarAtributos(int atributo, double porcentaje)
+    {
+        switch (atributo)
+        {
+            case 1: 
+                Inteligencia = (int)(Inteligencia * (1 + porcentaje /100));
+                break;
+            
+            case 2:
+                Fuerza = (int)(Fuerza *(1 + porcentaje /100));
+                break;
+            
+            case 3:
+                Velocidad = (int)(Velocidad * (1 + porcentaje / 100));
+                break;
+
+            case 4:
+                Durabilidad = (int)(Durabilidad * (1 + porcentaje / 100));
+                break;
+
+            case 5:
+                Poder = (int)(Poder * (1 + porcentaje / 100));
+                break;
+            
+            case 6:
+                Combate = (int)(Combate * (1 + porcentaje / 100));
+                break;
+        }
+    }
 }
 
 public class FabricaDePersonajes
