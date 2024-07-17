@@ -17,14 +17,14 @@ public class Combate
             {
                 jug2.Durabilidad = 0; // Soluciono el "error" de que la vida es >0
                 Console.WriteLine($"{jug2.Nombre} ha sido derrotado");
-                
+                MejorarAtributo(jug1);
                 return jug1;
             }
 
             RealizarTurno(jug2, jug1);
             if (jug1.Durabilidad <= 0)
             {
-                Console.WriteLine($"{jug2.Nombre} ha ganado el combate");
+                Console.WriteLine($"{jug1.Nombre} ha sido derrotado");
                 return jug2;
             }
 
@@ -66,6 +66,18 @@ public class Combate
 
         string opc = Console.ReadLine();
         int atributo;
+
+        if(int.TryParse(opc, out atributo) && atributo >= 1 && atributo <= 6)
+        {
+            double porcMejora = 10.0; //Valor predeterminado de porcentaje
+            personaje.MejorarAtributos(atributo, porcMejora);
+            Console.WriteLine("¡Atributo Mejorado Correctamente!");
+
+        }
+        else
+        {
+            Console.WriteLine("Opcion no valida");
+        }
 
     }
 
