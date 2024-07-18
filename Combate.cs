@@ -15,7 +15,6 @@ public class Combate
 
             if (jug2.Durabilidad <= 0)
             {
-                jug2.Durabilidad = 0; // Soluciono el "error" de que la vida es >0
                 Console.WriteLine($"{jug2.Nombre} ha sido derrotado");
                 MejorarAtributo(jug1);
                 return jug1;
@@ -39,6 +38,11 @@ public class Combate
 
         daño = CalcularDaño(ataca);
         defiende.Durabilidad -= daño;
+
+        if (defiende.Durabilidad <= 0)
+        {
+            defiende.Durabilidad = 0; // la vida no debería mostrarse como <0
+        }
 
         Console.WriteLine($"{ataca.Nombre} ataca a {defiende.Nombre} y causa {daño} puntos de daño");
         Console.WriteLine($"{defiende.Nombre} tiene {defiende.Durabilidad} puntos de durabilidad restantes");

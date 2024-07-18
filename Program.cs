@@ -30,19 +30,42 @@ else
     Console.WriteLine($"Nombre: {personaje.Nombre}, Inteligencia: {personaje.Inteligencia}, Fuerza: {personaje.Fuerza}, Velocidad: {personaje.Velocidad}, Durabilidad: {personaje.Durabilidad}, Poder: {personaje.Poder}, Combate: {personaje.Combate}, Id: {personaje.Id}");
 }*/
 
+//Mejora para eleccion de un personaje principal
+
+Random random = new Random();
+GeneracionPersonaje jugPrincipal = personajes[random.Next(personajes.Count)];
+personajes.Remove(jugPrincipal); // Saco de la lista de personajes al jugador principal para que este no luche contra si mismo
+
+int vidas = 3;
+
 //Ahora voy a empezar a aplicar la logica de combate
 
 Combate combate = new Combate();
-for (int i = 0; i < personajes.Count -1 ; i += 2) 
+
+foreach (var enemigo in personajes)
 {
-    var ganador = combate.IniciarCombate(personajes[i], personajes[i + 1]);
-    
-    if (ganador != null)
+    if (vidas > 0)
     {
-        Console.WriteLine($"Ganador del combate entre {personajes[i].Nombre} y {personajes[i + 1].Nombre}: {ganador.Nombre}");
+        Console.WriteLine($"\n{jugPrincipal.Nombre} vs {enemigo.Nombre}");
+        GeneracionPersonaje jugGanador = combate.IniciarCombate(jugPrincipal, enemigo);
+
+        if(jugGanador == jugPrincipal)
+        {
+            ComplementoGrafico.HasGanado();
+        }
+        else
+        {
+            vidas--;
+            ComplementoGrafico.HasPerdido();
+        }
+    }
+
+    if(vidas > 0)
+    {
+        ComplementoGrafico.GanadorFinal();
     }
     else
     {
-        Console.WriteLine($"Empate entre {personajes[i].Nombre} y {personajes[i + 1].Nombre}");
+        ComplementoGrafico.DerrotaFinal();
     }
 }
