@@ -11,6 +11,7 @@ public class GeneracionPersonaje
     private int combate;
     private int id;
     private string nombre;
+    private int victorias; 
 
     public int Inteligencia { get => inteligencia; set => inteligencia = value; }
     public int Fuerza { get => fuerza; set => fuerza = value; }
@@ -20,6 +21,8 @@ public class GeneracionPersonaje
     public int Combate { get => combate; set => combate = value; }
     public int Id { get => id; set => id = value; }
     public string Nombre { get => nombre; set => nombre = value; }
+    public int Victorias { get => victorias; set => victorias = value; }
+
 
     //Agregado de funcion para mejorar atributos
 
@@ -49,6 +52,10 @@ public class GeneracionPersonaje
             
             case 6:
                 Combate = (int)(Combate * (1 + porcentaje / 100));
+                break;
+            
+            default:
+                Console.WriteLine("Atributo no válido");
                 break;
         }
     }
