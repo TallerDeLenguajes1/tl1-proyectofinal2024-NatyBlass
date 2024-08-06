@@ -42,7 +42,7 @@ int vidas = 3;
 
 Combate combate = new Combate();
 
-foreach (var enemigo in personajes)
+foreach (var enemigo in personajes) 
 {
     if (vidas > 0)
     {
@@ -60,12 +60,13 @@ foreach (var enemigo in personajes)
         }
     }
 
-    if(vidas > 0)
-    {
-        ComplementoGrafico.GanadorFinal();
-    }
-    else
-    {
-        ComplementoGrafico.DerrotaFinal();
-    }
+}
+
+if(vidas > 0)
+{
+    ComplementoGrafico.GanadorFinal();
+}
+else
+{
+    ComplementoGrafico.DerrotaFinal();
 }

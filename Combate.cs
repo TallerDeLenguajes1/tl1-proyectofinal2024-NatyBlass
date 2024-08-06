@@ -12,11 +12,11 @@ public class Combate
         while (jug1.Durabilidad > 0 && jug2.Durabilidad > 0)
         {
             RealizarTurno(jug1, jug2);
-
+            
             if (jug2.Durabilidad <= 0)
             {
                 Console.WriteLine($"{jug2.Nombre} ha sido derrotado");
-                MejorarAtributo(jug1);
+                jug1.Victorias++;
 
                 if (jug1.Victorias % 3 == 0)  //Agregué el parámetro de Victorias para que cada 3 victorias mi personaje pueda ser mejorado, de lo contrario sería muy desbalanceado que por cada victoria, se pueda mejorar
                 {
@@ -26,14 +26,13 @@ public class Combate
             }
 
             RealizarTurno(jug2, jug1);
+
             if (jug1.Durabilidad <= 0)
             {
                 Console.WriteLine($"{jug1.Nombre} ha sido derrotado");
                 return jug2;
             }
-
         }
-
         return null; // en caso de empates, aunque es poco probable que suceda xd
     }
 
@@ -41,15 +40,22 @@ public class Combate
     {
         int daño;
 
-        daño = CalcularDaño(ataca);
-        defiende.Durabilidad -= daño;
-
-        if (defiende.Durabilidad <= 0)
+        if(AtaqueAcertado(ataca))
         {
-            defiende.Durabilidad = 0; // la vida no debería mostrarse como <0
-        }
+            daño = CalcularDaño(ataca);
+            defiende.Durabilidad -= daño;
 
-        Console.WriteLine($"{ataca.Nombre} ataca a {defiende.Nombre} y causa {daño} puntos de daño");
+            if(defiende.Durabilidad < 0)
+            {
+                defiende.Durabilidad = 0; //Para que la vida no se muestre en caso de ser < 0
+            }
+            Console.WriteLine($"{ataca.Nombre} ataca a {defiende.Nombre} y causa {daño} puntos de daño");
+        }
+        else
+        {
+            Console.WriteLine($"{ataca.Nombre} falló el ataque contra {defiende.Nombre}");
+
+        }
         Console.WriteLine($"{defiende.Nombre} tiene {defiende.Durabilidad} puntos de durabilidad restantes");
     }
 
@@ -107,7 +113,8 @@ public class Combate
         }
         else
         {
-            Console.WriteLine("Opcion no valida");
+            Console.WriteLine("Opcion no valida. Intente de nuevo");
+            MejorarAtributo(personaje);
         }
 
     }
