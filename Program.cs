@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-ComplementoGrafico.MostrarTitulo();
 
+ComplementoGrafico.MostrarLineasDivisorias();
+ComplementoGrafico.MostrarTitulo();
+ComplementoGrafico.MostrarLineasDivisorias();
 
 PersonajesJson personajesJson = new PersonajesJson();
 List<GeneracionPersonaje> personajes;
@@ -48,7 +51,7 @@ foreach (var enemigo in personajes)
 {
     if (vidas > 0)
     {
-        Console.WriteLine($"\n{jugPrincipal.Nombre} vs {enemigo.Nombre}");
+        Console.WriteLine($"\n                                                        {jugPrincipal.Nombre} vs {enemigo.Nombre}");
         GeneracionPersonaje jugGanador = combate.IniciarCombate(jugPrincipal, enemigo);
 
         if(jugGanador == jugPrincipal)
@@ -62,7 +65,7 @@ foreach (var enemigo in personajes)
             ComplementoGrafico.HasPerdido();
         }
     }
-
+    ComplementoGrafico.MostrarLineasDivisorias();
 }
 
 if(vidas > 0)
