@@ -1,1 +1,102 @@
-[{"Inteligencia":63,"Fuerza":53,"Velocidad":21,"Durabilidad":95,"Poder":73,"Combate":75,"Id":322,"Nombre":"Hellboy"},{"Inteligencia":94,"Fuerza":100,"Velocidad":100,"Durabilidad":100,"Poder":100,"Combate":85,"Id":644,"Nombre":"Superman"},{"Inteligencia":81,"Fuerza":100,"Velocidad":42,"Durabilidad":100,"Poder":40,"Combate":70,"Id":589,"Nombre":"She-Hulk"},{"Inteligencia":88,"Fuerza":100,"Velocidad":70,"Durabilidad":99,"Poder":100,"Combate":74,"Id":425,"Nombre":"Magus"},{"Inteligencia":88,"Fuerza":14,"Velocidad":46,"Durabilidad":60,"Poder":58,"Combate":75,"Id":228,"Nombre":"Donatello"},{"Inteligencia":63,"Fuerza":60,"Velocidad":35,"Durabilidad":42,"Poder":74,"Combate":56,"Id":472,"Nombre":"Morlun"},{"Inteligencia":0,"Fuerza":96,"Velocidad":0,"Durabilidad":0,"Poder":0,"Combate":0,"Id":317,"Nombre":"Hawkwoman"},{"Inteligencia":50,"Fuerza":48,"Velocidad":42,"Durabilidad":35,"Poder":67,"Combate":60,"Id":217,"Nombre":"Demogoblin"},{"Inteligencia":69,"Fuerza":95,"Velocidad":58,"Durabilidad":70,"Poder":73,"Combate":85,"Id":481,"Nombre":"Namor"},{"Inteligencia":50,"Fuerza":100,"Velocidad":100,"Durabilidad":100,"Poder":77,"Combate":70,"Id":285,"Nombre":"Gladiator"}]
+[
+    {
+        "Inteligencia": 63,
+        "Fuerza": 53,
+        "Velocidad": 21,
+        "Durabilidad": 95,
+        "Poder": 73,
+        "Combate": 75,
+        "Id": 322,
+        "Nombre": "Hellboy"
+    },
+    {
+        "Inteligencia": 94,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 100,
+        "Poder": 100,
+        "Combate": 85,
+        "Id": 644,
+        "Nombre": "Superman"
+    },
+    {
+        "Inteligencia": 81,
+        "Fuerza": 100,
+        "Velocidad": 42,
+        "Durabilidad": 100,
+        "Poder": 40,
+        "Combate": 70,
+        "Id": 589,
+        "Nombre": "She-Hulk"
+    },
+    {
+        "Inteligencia": 88,
+        "Fuerza": 100,
+        "Velocidad": 70,
+        "Durabilidad": 99,
+        "Poder": 100,
+        "Combate": 74,
+        "Id": 425,
+        "Nombre": "Magus"
+    },
+    {
+        "Inteligencia": 88,
+        "Fuerza": 14,
+        "Velocidad": 46,
+        "Durabilidad": 60,
+        "Poder": 58,
+        "Combate": 75,
+        "Id": 228,
+        "Nombre": "Donatello"
+    },
+    {
+        "Inteligencia": 63,
+        "Fuerza": 60,
+        "Velocidad": 35,
+        "Durabilidad": 42,
+        "Poder": 74,
+        "Combate": 56,
+        "Id": 472,
+        "Nombre": "Morlun"
+    },
+    {
+        "Inteligencia": 5,
+        "Fuerza": 96,
+        "Velocidad": 10,
+        "Durabilidad": 100,
+        "Poder": 10,
+        "Combate": 30,
+        "Id": 317,
+        "Nombre": "Hawkwoman"
+    },
+    {
+        "Inteligencia": 50,
+        "Fuerza": 48,
+        "Velocidad": 42,
+        "Durabilidad": 35,
+        "Poder": 67,
+        "Combate": 60,
+        "Id": 217,
+        "Nombre": "Demogoblin"
+    },
+    {
+        "Inteligencia": 69,
+        "Fuerza": 95,
+        "Velocidad": 58,
+        "Durabilidad": 70,
+        "Poder": 73,
+        "Combate": 85,
+        "Id": 481,
+        "Nombre": "Namor"
+    },
+    {
+        "Inteligencia": 50,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 100,
+        "Poder": 77,
+        "Combate": 70,
+        "Id": 285,
+        "Nombre": "Gladiator"
+    }
+]

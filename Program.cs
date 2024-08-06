@@ -36,6 +36,8 @@ Random random = new Random();
 GeneracionPersonaje jugPrincipal = personajes[random.Next(personajes.Count)];
 personajes.Remove(jugPrincipal); // Saco de la lista de personajes al jugador principal para que este no luche contra si mismo
 
+int durabilidad = jugPrincipal.Durabilidad;
+
 int vidas = 3;
 
 //Ahora voy a empezar a aplicar la logica de combate
@@ -56,6 +58,7 @@ foreach (var enemigo in personajes)
         else
         {
             vidas--;
+            jugPrincipal.Durabilidad = durabilidad;
             ComplementoGrafico.HasPerdido();
         }
     }
