@@ -22,15 +22,20 @@ namespace EspacioPartidaEHistorial //me daba un error al compilar sin un namespa
 
 public class HistorialJson
 {
-    private const string ArchivoPartidas = "partidas.json";
+    private readonly string ArchivoPartidas = "partidas.json";
+    
+    public HistorialJson(string nombreArchivo)
+    {
+        ArchivoPartidas = nombreArchivo;
+    }
 
-    public void GuardarGanador(GeneracionPersonaje ganador, string nombreArchivo)
+    public void GuardarGanador(GeneracionPersonaje ganador)
     {
         List<GeneracionPersonaje> ganadores;
 
-        if (File.Exists(nombreArchivo))
+        if (File.Exists(ArchivoPartidas))
         {
-            string jsonString = File.ReadAllText(nombreArchivo);
+            string jsonString = File.ReadAllText(ArchivoPartidas);
             ganadores = JsonSerializer.Deserialize<List<GeneracionPersonaje>>(jsonString);
         }
         else
@@ -40,23 +45,23 @@ public class HistorialJson
         
         ganadores.Add(ganador);
 
-        File.WriteAllText(nombreArchivo, JsonSerializer.Serialize(ganadores));
+        File.WriteAllText(ArchivoPartidas, JsonSerializer.Serialize(ganadores));
     }
 
-    public List<GeneracionPersonaje> LeerGanadores(string nombreArchivo)
+    public List<GeneracionPersonaje> LeerGanadores(string ArchivoPartidas)
     {
-        if (File.Exists(nombreArchivo))
+        if (File.Exists(ArchivoPartidas))
         {
-            string jsonString = File.ReadAllText(nombreArchivo);
+            string jsonString = File.ReadAllText(ArchivoPartidas);
             return JsonSerializer.Deserialize<List<GeneracionPersonaje>>(jsonString);
         }
 
         return new List<GeneracionPersonaje>();
     }
 
-    public bool Existe(string nombreArchivo)
+    public bool Existe(string ArchivoPartidas)
     {
-        return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+        return File.Exists(ArchivoPartidas) && new FileInfo(ArchivoPartidas).Length > 0;
     }
 
     public List<Partida> CargarHistorial()
@@ -68,6 +73,23 @@ public class HistorialJson
 
         string jsonString = File.ReadAllText(ArchivoPartidas);
         return JsonSerializer.Deserialize<List<Partida>>(jsonString);
+    }
+
+    public void GuardarHistorial(List<Partida> historial)
+    {
+        string jsonString = JsonSerializer.Serialize(historial, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(ArchivoPartidas, jsonString);
+    }
+
+    public List<Partida> LeerHistorial()
+    {
+        if (File.Exists(ArchivoPartidas))
+        {
+            string jsonString = File.ReadAllText(ArchivoPartidas);
+            return JsonSerializer.Deserialize<List<Partida>>(jsonString);
+        }
+
+        return new List<Partida>();
     }
 
 }

@@ -1,7 +1,15 @@
 using EspacioPartidaEHistorial;
 public class MenuYJuego
 {
-    private EspacioPartidaEHistorial.HistorialJson historialJson = new EspacioPartidaEHistorial.HistorialJson();
+
+    private readonly HistorialJson historialJson_; //Tuve que aplicar un constructor ya que ahora hay uno dentro de HistorialJson
+    
+    public MenuYJuego (HistorialJson historialJson)
+    {
+        historialJson_ = historialJson;
+    }
+
+
 
     public void MostrarMenu()
     {
@@ -120,6 +128,11 @@ public class MenuYJuego
             ComplementoGrafico.DerrotaFinal();
         }
 
+        //Ahora procedo a guardar la partida en el historial
+
+        var historial = historialJson_.LeerHistorial();
+        historial.Add(nuevaPartida);
+        historialJson_.GuardarHistorial(historial);
 
 
     }
