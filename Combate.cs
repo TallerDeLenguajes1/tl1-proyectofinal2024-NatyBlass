@@ -11,6 +11,10 @@ public class Combate
 
         while (jug1.Durabilidad > 0 && jug2.Durabilidad > 0)
         {
+            Console.WriteLine($"{jug1.Nombre} tiene {jug1.Durabilidad} puntos de durabilidad");
+            Console.WriteLine($"{jug2.Nombre} tiene {jug2.Durabilidad} puntos de durabilidad");
+
+
             RealizarTurno(jug1, jug2);
             
             if (jug2.Durabilidad <= 0)
@@ -118,15 +122,6 @@ public class Combate
         }
 
     }
-
-
-
-
-
-
-
-
-    
 
 
 

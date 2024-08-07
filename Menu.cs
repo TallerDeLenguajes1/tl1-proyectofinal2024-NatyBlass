@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using EspacioPartidaEHistorial;
 public class MenuYJuego
 {
@@ -42,50 +43,48 @@ public class MenuYJuego
     private void JugarPartida(Partida partida)
     {
         Combate combate = new Combate();
-        bool continuar = true;
         int durabilidad = partida.PjPrincipal.Durabilidad;
         int vidas = partida.Vidas;
         
-        while (continuar && partida.Vidas > 0)
+        for(int i = 0; i < 9; i++)
         {
-            for(int i = 0; i < 10; i++)
+            var enemigo = partida.Personajes[i];
+            Console.WriteLine($"\n                                                        {partida.PjPrincipal.Nombre} vs {enemigo.Nombre}");
+            GeneracionPersonaje jugGanador = combate.IniciarCombate(partida.PjPrincipal, enemigo);
+                
+            Console.WriteLine($"{partida.PjPrincipal.Nombre} tiene {partida.PjPrincipal.Durabilidad} puntos de durabilidad");
+            Console.WriteLine($"{enemigo.Nombre} tiene {enemigo.Durabilidad} puntos de durabilidad");
+
+            if(jugGanador == partida.PjPrincipal)
             {
-                var enemigo = partida.Personajes[i];
-                Console.WriteLine($"\n                                                        {partida.PjPrincipal.Nombre} vs {enemigo.Nombre}");
-                GeneracionPersonaje jugGanador = combate.IniciarCombate(partida.PjPrincipal, enemigo);
-
-                if(jugGanador == partida.PjPrincipal)
-                {
-                    ComplementoGrafico.HasGanado();
-                }
-                else
-                {
-                    partida.Vidas--;
-                    Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
-                    partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
-                    ComplementoGrafico.HasPerdido();
-
-                    if (partida.Vidas == 0)
-                    {
-                        Console.WriteLine("                                     PERDISTE TODAS TUS VIDAS");
-                        break; //Este condicionante me ayuda a salir del bucle si el personaje perdió todas las vidas
-                    }
-                }
-
-                ComplementoGrafico.MostrarLineasDivisorias();
+                Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
+                ComplementoGrafico.HasGanado();
             }
+            else
+            {
+                partida.Vidas--;
+                Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
+                partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
+                ComplementoGrafico.HasPerdido();
 
-            partida.RondasJugadas++;
+                if (partida.Vidas == 0)
+                {
+                    Console.WriteLine("                                         PERDISTE TODAS TUS VIDAS");
+                    break; //Este condicionante me ayuda a salir del bucle si el personaje perdió todas las vidas
+                }
+            }
+            
+            ComplementoGrafico.MostrarLineasDivisorias();
         }
             
-        if (partida.Vidas > 0)
+        if (partida.Vidas == 0)
         {
-            ComplementoGrafico.GanadorFinal();
+            Console.WriteLine("                           PERDISTE LA OPORTUNIDAD DE SER EL DIOS DE LA GUERRA DE LOS MUNDOS");
+            ComplementoGrafico.DerrotaFinal();
         }
         else
         {
-            Console.WriteLine("                                 PERDISTE LA OPORTUNIDAD DE SER EL DIOS DE LA GUERRA DE LOS MUNDOS");
-            ComplementoGrafico.DerrotaFinal();
+            ComplementoGrafico.GanadorFinal();
         }
 
         // Guardar la partida al finalizar
