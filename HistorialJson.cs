@@ -2,8 +2,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
+namespace EspacioPartidaEHistorial //me daba un error al compilar sin un namespace
+{
+    public class Partida
+    {
+    private string nombreUsuario;
+    private DateTime fecha;
+    private List<GeneracionPersonaje> personajes;
+    private GeneracionPersonaje pjPrincipal;
+    private int vidas;
+
+    public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+    public DateTime Fecha { get => fecha; set => fecha = value; }
+    public List<GeneracionPersonaje> Personajes { get => personajes; set => personajes = value; }
+    public GeneracionPersonaje PjPrincipal { get => pjPrincipal; set => pjPrincipal = value; }
+    public int Vidas { get => vidas; set => vidas = value; }
+    }
+
+
 public class HistorialJson
 {
+    private const string ArchivoPartidas = "partidas.json";
+
     public void GuardarGanador(GeneracionPersonaje ganador, string nombreArchivo)
     {
         List<GeneracionPersonaje> ganadores;
@@ -38,5 +58,18 @@ public class HistorialJson
     {
         return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
     }
+
+    public List<Partida> CargarHistorial()
+    {
+        if(!File.Exists(ArchivoPartidas))
+        {
+            return new List<Partida>();
+        }
+
+        string jsonString = File.ReadAllText(ArchivoPartidas);
+        return JsonSerializer.Deserialize<List<Partida>>(jsonString);
+    }
+
+}
 
 }
