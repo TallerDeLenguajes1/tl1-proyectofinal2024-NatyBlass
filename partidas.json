@@ -114,6 +114,243 @@
       "Nombre": "Demogoblin",
       "Victorias": 0
     },
-    "Vidas": 3
+    "Vidas": 3,
+    "RondasJugadas": 0
+  },
+  {
+    "NombreUsuario": "NatyBlass",
+    "Fecha": "2024-08-07T16:46:31.6466741-03:00",
+    "Personajes": [
+      {
+        "Inteligencia": 63,
+        "Fuerza": 53,
+        "Velocidad": 21,
+        "Durabilidad": 0,
+        "Poder": 73,
+        "Combate": 75,
+        "Id": 322,
+        "Nombre": "Hellboy",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 94,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 54,
+        "Poder": 100,
+        "Combate": 85,
+        "Id": 644,
+        "Nombre": "Superman",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 81,
+        "Fuerza": 100,
+        "Velocidad": 42,
+        "Durabilidad": 0,
+        "Poder": 40,
+        "Combate": 70,
+        "Id": 589,
+        "Nombre": "She-Hulk",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 88,
+        "Fuerza": 100,
+        "Velocidad": 70,
+        "Durabilidad": 45,
+        "Poder": 100,
+        "Combate": 74,
+        "Id": 425,
+        "Nombre": "Magus",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 88,
+        "Fuerza": 14,
+        "Velocidad": 46,
+        "Durabilidad": 0,
+        "Poder": 58,
+        "Combate": 75,
+        "Id": 228,
+        "Nombre": "Donatello",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 63,
+        "Fuerza": 60,
+        "Velocidad": 35,
+        "Durabilidad": 0,
+        "Poder": 74,
+        "Combate": 56,
+        "Id": 472,
+        "Nombre": "Morlun",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 5,
+        "Fuerza": 96,
+        "Velocidad": 10,
+        "Durabilidad": 0,
+        "Poder": 10,
+        "Combate": 30,
+        "Id": 317,
+        "Nombre": "Hawkwoman",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 48,
+        "Velocidad": 42,
+        "Durabilidad": 0,
+        "Poder": 67,
+        "Combate": 60,
+        "Id": 217,
+        "Nombre": "Demogoblin",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 43,
+        "Poder": 77,
+        "Combate": 70,
+        "Id": 285,
+        "Nombre": "Gladiator",
+        "Victorias": 0
+      }
+    ],
+    "PjPrincipal": {
+      "Inteligencia": 69,
+      "Fuerza": 95,
+      "Velocidad": 58,
+      "Durabilidad": 70,
+      "Poder": 73,
+      "Combate": 93,
+      "Id": 481,
+      "Nombre": "Namor",
+      "Victorias": 6
+    },
+    "Vidas": 3,
+    "RondasJugadas": 0
+  },
+  {
+    "NombreUsuario": "Natu",
+    "Fecha": "2024-08-07T18:06:56.2764896-03:00",
+    "Personajes": [
+      {
+        "Inteligencia": 94,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 12,
+        "Poder": 100,
+        "Combate": 85,
+        "Id": 644,
+        "Nombre": "Superman",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 81,
+        "Fuerza": 100,
+        "Velocidad": 42,
+        "Durabilidad": 0,
+        "Poder": 40,
+        "Combate": 70,
+        "Id": 589,
+        "Nombre": "She-Hulk",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 88,
+        "Fuerza": 100,
+        "Velocidad": 70,
+        "Durabilidad": 68,
+        "Poder": 100,
+        "Combate": 74,
+        "Id": 425,
+        "Nombre": "Magus",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 88,
+        "Fuerza": 14,
+        "Velocidad": 46,
+        "Durabilidad": 0,
+        "Poder": 58,
+        "Combate": 75,
+        "Id": 228,
+        "Nombre": "Donatello",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 63,
+        "Fuerza": 60,
+        "Velocidad": 35,
+        "Durabilidad": 0,
+        "Poder": 74,
+        "Combate": 56,
+        "Id": 472,
+        "Nombre": "Morlun",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 5,
+        "Fuerza": 96,
+        "Velocidad": 10,
+        "Durabilidad": 0,
+        "Poder": 10,
+        "Combate": 30,
+        "Id": 317,
+        "Nombre": "Hawkwoman",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 48,
+        "Velocidad": 42,
+        "Durabilidad": 0,
+        "Poder": 67,
+        "Combate": 60,
+        "Id": 217,
+        "Nombre": "Demogoblin",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 69,
+        "Fuerza": 95,
+        "Velocidad": 58,
+        "Durabilidad": 16,
+        "Poder": 73,
+        "Combate": 85,
+        "Id": 481,
+        "Nombre": "Namor",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 100,
+        "Velocidad": 100,
+        "Durabilidad": 100,
+        "Poder": 77,
+        "Combate": 70,
+        "Id": 285,
+        "Nombre": "Gladiator",
+        "Victorias": 0
+      }
+    ],
+    "PjPrincipal": {
+      "Inteligencia": 63,
+      "Fuerza": 53,
+      "Velocidad": 21,
+      "Durabilidad": 95,
+      "Poder": 73,
+      "Combate": 75,
+      "Id": 322,
+      "Nombre": "Hellboy",
+      "Victorias": 5
+    },
+    "Vidas": 0,
+    "RondasJugadas": 1
   }
 ]

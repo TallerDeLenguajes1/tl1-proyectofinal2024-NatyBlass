@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using EspacioPartidaEHistorial;
 public class MenuYJuego
 {
@@ -15,10 +16,10 @@ public class MenuYJuego
     {
         string opc;
 
-        Console.WriteLine("                     ================================");
-        Console.WriteLine("                         1 - INICIAR JUEGO NUEVO");
-        Console.WriteLine("                         2 -  CONTINUAR JUEGO");
-        Console.WriteLine("                     ================================");
+        Console.WriteLine("                                                     ================================");
+        Console.WriteLine("                                                         1 - INICIAR JUEGO NUEVO");
+        Console.WriteLine("                                                         2 -  CONTINUAR JUEGO");
+        Console.WriteLine("                                                     ================================");
         
         opc = Console.ReadLine();
 
@@ -30,22 +31,74 @@ public class MenuYJuego
             case "2":
                 break;
             default:
-                Console.WriteLine("LA OPCION QUE INGRESO NO ES VALIDA");
+                Console.WriteLine("                                             LA OPCION QUE INGRESO NO ES VALIDA");
                 MostrarMenu();
                 break;
         }
+    }
 
+    //Para mejorar la organización, creé un método específico llamado "JugarPartida"
 
+    private void JugarPartida(Partida partida)
+    {
+        Combate combate = new Combate();
+        bool continuar = true;
+        int durabilidad = partida.PjPrincipal.Durabilidad;
+        int vidas = partida.Vidas;
+        
+        while (continuar && partida.Vidas > 0)
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                var enemigo = partida.Personajes[i];
+                Console.WriteLine($"\n                                                        {partida.PjPrincipal.Nombre} vs {enemigo.Nombre}");
+                GeneracionPersonaje jugGanador = combate.IniciarCombate(partida.PjPrincipal, enemigo);
 
+                if(jugGanador == partida.PjPrincipal)
+                {
+                    ComplementoGrafico.HasGanado();
+                }
+                else
+                {
+                    partida.Vidas--;
+                    Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
+                    partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
+                    ComplementoGrafico.HasPerdido();
 
+                    if (partida.Vidas == 0)
+                    {
+                        Console.WriteLine("                                     PERDISTE TODAS TUS VIDAS");
+                        break; //Este condicionante me ayuda a salir del bucle si el personaje perdió todas las vidas
+                    }
+                }
+
+                ComplementoGrafico.MostrarLineasDivisorias();
+            }
+
+            partida.RondasJugadas++;
+        }
+            
+        if (partida.Vidas > 0)
+        {
+            ComplementoGrafico.GanadorFinal();
+        }
+        else
+        {
+            Console.WriteLine("                                 PERDISTE LA OPORTUNIDAD DE SER EL DIOS DE LA GUERRA DE LOS MUNDOS");
+            ComplementoGrafico.DerrotaFinal();
+        }
+
+        // Guardar la partida al finalizar
+        historialJson_.GuardarPartida(partida);
+        Console.WriteLine("PARTIDA GUARDADA");
     }
 
     private async void IniciarJuegoNuevo() //async para poder usar await
     {
         string nickname;
 
-        Console.WriteLine("                     ================================");
-        Console.WriteLine("                           INGRESE SU NICKNAME");
+        Console.WriteLine("                                                     ================================");
+        Console.WriteLine("                                                            INGRESE SU NICKNAME");
         
         nickname = Console.ReadLine();
 
@@ -79,11 +132,7 @@ public class MenuYJuego
         {
             Console.WriteLine($"Nombre: {personaje.Nombre}, Inteligencia: {personaje.Inteligencia}, Fuerza: {personaje.Fuerza}, Velocidad: {personaje.Velocidad}, Durabilidad: {personaje.Durabilidad}, Poder: {personaje.Poder}, Combate: {personaje.Combate}, Id: {personaje.Id}");
         }*/
-
-        int durabilidad = jugPrincipal.Durabilidad;
         int vidas = 3;
-
-        Combate combate = new Combate();
 
         EspacioPartidaEHistorial.Partida nuevaPartida = new EspacioPartidaEHistorial.Partida
         {
@@ -93,50 +142,7 @@ public class MenuYJuego
             PjPrincipal = jugPrincipal,
             Vidas = vidas
         };
-
-        //Ahora voy a empezar a aplicar la logica de combate
-
-
-
-        foreach (var enemigo in personajes) 
-        {
-            if (vidas > 0)
-            {
-                Console.WriteLine($"\n                                                        {jugPrincipal.Nombre} vs {enemigo.Nombre}");
-                GeneracionPersonaje jugGanador = combate.IniciarCombate(jugPrincipal, enemigo);
-
-                if(jugGanador == jugPrincipal)
-                {
-                    ComplementoGrafico.HasGanado();
-                }
-                else
-                {
-                    vidas--;
-                    jugPrincipal.Durabilidad = durabilidad;
-                    ComplementoGrafico.HasPerdido();
-                }
-            }
-            ComplementoGrafico.MostrarLineasDivisorias();
-        }
-
-        if(vidas > 0)
-        {
-            ComplementoGrafico.GanadorFinal();
-        }
-        else
-        {
-            ComplementoGrafico.DerrotaFinal();
-        }
-
-        //Ahora procedo a guardar la partida en el historial
-
-        var historial = historialJson_.LeerHistorial();
-        historial.Add(nuevaPartida);
-        historialJson_.GuardarHistorial(historial);
-
-
+        JugarPartida(nuevaPartida);
     }
-
-
 
 }
