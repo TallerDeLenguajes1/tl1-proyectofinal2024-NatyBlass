@@ -144,22 +144,39 @@ public class MenuYJuego
         // }
 
         PersonajesJson personajesJson = new PersonajesJson();
-        List<GeneracionPersonaje> personajes;
-
+        List<GeneracionPersonaje> personajes = new List<GeneracionPersonaje>();
+        List<GeneracionPersonaje> personajesFilt;
+        
         if (personajesJson.Existe("personajes.json"))
         {
-            personajes = personajesJson.LeerPjs("personajes.Json");
+            personajesFilt = personajesJson.LeerPjs("personajes.Json");
+
+            Random rand1 = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                personajes.Add(personajesFilt[rand1.Next(0,51)]);
+                
+            }
         }
         else
         {
             FabricaDePersonajes fabrica = new FabricaDePersonajes();
-            personajes = new List<GeneracionPersonaje>();
+            personajesFilt = new List<GeneracionPersonaje>();
             for (int i = 0; i < 10; i++)
             {
-                personajes.Add(await fabrica.CrearPersonaje());
+                personajesFilt.Add(await fabrica.CrearPersonaje());
             }
 
-            personajesJson.GuardarPjs(personajes, "personajes.json");
+            personajesJson.GuardarPjs(personajesFilt, "personajes.json");
+
+            Random rand1 = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                personajes.Add(personajesFilt[rand1.Next(0,51)]);
+                
+            }
         }
 
 
@@ -192,7 +209,7 @@ public class MenuYJuego
             Vidas = vidas
         };
 
-        Console.WriteLine("Llamando a JugarPartida...");
+        //Console.WriteLine("Llamando a JugarPartida...");
         JugarPartida(nuevaPartida);
     }
 
@@ -277,6 +294,7 @@ public class MenuYJuego
 
         Console.WriteLine("Presione cualquier tecla para volver al menú...");
         Console.ReadKey();
+        MostrarMenu();
     }
 
 }
