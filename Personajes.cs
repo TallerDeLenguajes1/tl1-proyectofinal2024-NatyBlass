@@ -59,6 +59,21 @@ public class GeneracionPersonaje
                 break;
         }
     }
+
+    public void MostrarAtributos()
+    {
+        Console.WriteLine("                     ===========================PERSONAJE PRINCIPAL===========================");
+        Console.WriteLine($"                                                 NOMBRE: {Nombre}");
+        Console.WriteLine($"                                           INTELIGENCIA: {Inteligencia}");
+        Console.WriteLine($"                                                 FUERZA: {Fuerza}");
+        Console.WriteLine($"                                              VELOCIDAD: {Velocidad}");
+        Console.WriteLine($"                                                  PODER: {Poder}");
+        Console.WriteLine($"                                            DURABILIDAD: {Durabilidad}");
+        Console.WriteLine($"                                                COMBATE: {Combate}");
+        Console.WriteLine("                     =========================================================================");
+
+    }
+
 }
 
 public class FabricaDePersonajes

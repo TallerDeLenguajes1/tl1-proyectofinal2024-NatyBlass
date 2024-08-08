@@ -148,6 +148,8 @@ public class MenuYJuego
             Console.WriteLine($"Nombre: {personaje.Nombre}, Inteligencia: {personaje.Inteligencia}, Fuerza: {personaje.Fuerza}, Velocidad: {personaje.Velocidad}, Durabilidad: {personaje.Durabilidad}, Poder: {personaje.Poder}, Combate: {personaje.Combate}, Id: {personaje.Id}");
         }*/
 
+        jugPrincipal.MostrarAtributos();
+
         int vidas = 3;
 
         EspacioPartidaEHistorial.Partida nuevaPartida = new EspacioPartidaEHistorial.Partida
@@ -168,11 +170,11 @@ public class MenuYJuego
         
         if (partidasGuardadas.Count == 0)
         {
-            Console.WriteLine("NO HAY PARTIDAS GUARDADAS PARA CONTINUAR");
+            Console.WriteLine("                     NO HAY PARTIDAS GUARDADAS PARA CONTINUAR");
             return; //para salir del método
         }
 
-        Console.WriteLine("INGRESE SU NICKNAME PARA BUSCAR PARTIDAS");
+        Console.WriteLine("                         INGRESE SU NICKNAME PARA BUSCAR PARTIDAS");
         string nickname = Console.ReadLine();
 
         Partida partidaParaContinuar = null;
@@ -188,12 +190,12 @@ public class MenuYJuego
 
         if (partidaParaContinuar == null)
         {
-            Console.WriteLine($"NO SE ENCONTRARON PARTIDAS DEL JUGADOR {nickname}");
+            Console.WriteLine($"                  NO SE ENCONTRARON PARTIDAS DEL JUGADOR {nickname}");
             return;
         }
 
         //con esto el usuario puede continuar su partida
-        Console.WriteLine($"PARTIDA ENCONTRADA PARA {nickname}. CONTINUA JUGANDO");
+        Console.WriteLine($"                     PARTIDA ENCONTRADA PARA {nickname}. CONTINUA JUGANDO");
 
         const string nombreArchivo = "personajes.json";
 
