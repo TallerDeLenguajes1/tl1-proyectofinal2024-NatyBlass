@@ -86,6 +86,24 @@ public class FabricaDePersonajes
     }
 
 
+    //Voy a agregar ahora un método para que la API siempre me genere nuevos personajes y no solo la Lista fija con la que estaba trabajando.
+
+    public async Task<List<GeneracionPersonaje>> ObtenerPersonajes(string nombreArchivo, int cantPjs)
+    {
+        List<GeneracionPersonaje> personajes = new List<GeneracionPersonaje>();
+
+        for (int i = 0; i < cantPjs; i++)
+        {
+            personajes.Add(await CrearPersonaje());
+        }
+
+        PersonajesJson personajesJson = new PersonajesJson();
+        personajesJson.GuardarPjs(personajes, nombreArchivo);
+
+        return personajes;
+    }
+
+
     //Para Verificar antes de convertir string a enteros : - recomendación del chat gpt debido a que me dio un error de la nada - 
     private int TryParseInt(string value)
     {

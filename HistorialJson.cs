@@ -99,6 +99,29 @@ public class HistorialJson
         return new List<Partida>();
     }
 
+    public List<Partida> LeerPartidasGuardadas()
+    {
+        try
+        {
+            if (File.Exists(ArchivoPartidas))
+            {
+                string jsonString = File.ReadAllText(ArchivoPartidas);
+                return JsonSerializer.Deserialize<List<Partida>>(jsonString);
+            }
+            else
+            {
+                return new List<Partida>();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al leer las partidas Guardadas: {ex.Message}");
+            return new List<Partida>(); //me dará una lista vacía si ocurre un error
+            
+        }
+    }
+
+
 }
 
 }

@@ -11,8 +11,6 @@ public class MenuYJuego
         historialJson_ = historialJson;
     }
 
-
-
     public void MostrarMenu()
     {
         string opc;
@@ -30,6 +28,7 @@ public class MenuYJuego
                 IniciarJuegoNuevo();
                 break;
             case "2":
+                ContinuarJuego();
                 break;
             default:
                 Console.WriteLine("                                             LA OPCION QUE INGRESO NO ES VALIDA");
@@ -58,7 +57,6 @@ public class MenuYJuego
                 if(jugGanador == partida.PjPrincipal)
                 {
                     Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
-                    ComplementoGrafico.HasGanado();
                     partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador
                 }
                 else
@@ -66,7 +64,6 @@ public class MenuYJuego
                     partida.Vidas--;
                     Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
                     partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
-                    ComplementoGrafico.HasPerdido();
 
                     if (partida.Vidas == 0)
                     {
@@ -150,6 +147,7 @@ public class MenuYJuego
         {
             Console.WriteLine($"Nombre: {personaje.Nombre}, Inteligencia: {personaje.Inteligencia}, Fuerza: {personaje.Fuerza}, Velocidad: {personaje.Velocidad}, Durabilidad: {personaje.Durabilidad}, Poder: {personaje.Poder}, Combate: {personaje.Combate}, Id: {personaje.Id}");
         }*/
+
         int vidas = 3;
 
         EspacioPartidaEHistorial.Partida nuevaPartida = new EspacioPartidaEHistorial.Partida
@@ -162,5 +160,53 @@ public class MenuYJuego
         };
         JugarPartida(nuevaPartida);
     }
+
+    private void ContinuarJuego()
+    {
+        //Voy a leer las partidas guardadas
+        List<Partida> partidasGuardadas = historialJson_.LeerPartidasGuardadas();
+        
+        if (partidasGuardadas.Count == 0)
+        {
+            Console.WriteLine("NO HAY PARTIDAS GUARDADAS PARA CONTINUAR");
+            return; //para salir del método
+        }
+
+        Console.WriteLine("INGRESE SU NICKNAME PARA BUSCAR PARTIDAS");
+        string nickname = Console.ReadLine();
+
+        Partida partidaParaContinuar = null;
+
+        foreach (var partida in partidasGuardadas)
+        {
+            if (partida.NombreUsuario == nickname)
+            {
+                partidaParaContinuar = partida;
+                break; //Salgo del bucle al encontrar la partida
+            }
+        }
+
+        if (partidaParaContinuar == null)
+        {
+            Console.WriteLine($"NO SE ENCONTRARON PARTIDAS DEL JUGADOR {nickname}");
+            return;
+        }
+
+        //con esto el usuario puede continuar su partida
+        Console.WriteLine($"PARTIDA ENCONTRADA PARA {nickname}. CONTINUA JUGANDO");
+
+        const string nombreArchivo = "personajes.json";
+
+        PersonajesJson personajesJson = new PersonajesJson();
+        List<GeneracionPersonaje> personajes = personajesJson.LeerPjs(nombreArchivo);
+
+        GeneracionPersonaje jugPrincipal = partidaParaContinuar.PjPrincipal;
+
+        personajes.Remove(jugPrincipal);
+
+        partidaParaContinuar.Personajes = personajes;
+        JugarPartida(partidaParaContinuar);
+    }
+
 
 }

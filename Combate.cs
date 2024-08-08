@@ -1,4 +1,5 @@
 using System.Runtime;
+using System.Runtime.CompilerServices;
 using System.Security;
 
 public class Combate
@@ -21,6 +22,7 @@ public class Combate
             {
                 Console.WriteLine($"{jug2.Nombre} ha sido derrotado");
                 jug1.Victorias++;
+                ComplementoGrafico.HasGanado();
 
                 if (jug1.Victorias % 3 == 0)  //Agregué el parámetro de Victorias para que cada 3 victorias mi personaje pueda ser mejorado, de lo contrario sería muy desbalanceado que por cada victoria, se pueda mejorar
                 {
@@ -34,6 +36,8 @@ public class Combate
             if (jug1.Durabilidad <= 0)
             {
                 Console.WriteLine($"{jug1.Nombre} ha sido derrotado");
+                ComplementoGrafico.HasPerdido();
+                jug2.Victorias++;
                 return jug2;
             }
         }
