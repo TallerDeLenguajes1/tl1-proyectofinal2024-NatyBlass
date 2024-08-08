@@ -59,6 +59,7 @@ public class MenuYJuego
                 {
                     Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
                     ComplementoGrafico.HasGanado();
+                    partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador
                 }
                 else
                 {
