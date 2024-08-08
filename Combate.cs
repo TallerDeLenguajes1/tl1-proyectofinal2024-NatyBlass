@@ -118,6 +118,37 @@ public class Combate
             personaje.MejorarAtributos(atributo, porcMejora);
             Console.WriteLine("¡Atributo Mejorado Correctamente!");
 
+            switch (atributo)
+        {
+            case 1: 
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Inteligencia} PUNTOS DE INTELIGENCIA");
+                break;
+            
+            case 2:
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Fuerza} PUNTOS DE FUERZA");
+                break;
+            
+            case 3:
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Velocidad} PUNTOS DE VELOCIDAD");
+                break;
+
+            case 4:
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Durabilidad} PUNTOS DE DURABILIDAD");
+                break;
+
+            case 5:
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Poder} PUNTOS DE PODER");
+                break;
+            
+            case 6:
+                Console.WriteLine($"TU PERSONAJE AHORA TIENE {personaje.Combate} PUNTOS DE COMBATE");
+                break;
+            
+            default:
+                Console.WriteLine("Atributo no válido");
+                break;
+        }
+
         }
         else
         {
