@@ -6,10 +6,10 @@ public class Combate
 {
     public GeneracionPersonaje IniciarCombate(GeneracionPersonaje jug1, GeneracionPersonaje jug2)
     {
-        ComplementoGrafico.MostrarCombateComenzo();
+
         ComplementoGrafico.MostrarLineasDivisorias();
-        
-        Console.WriteLine($"Combate entre {jug1.Nombre} y {jug2.Nombre}");
+        ComplementoGrafico.MostrarCombateComenzo();
+        Console.WriteLine($"                        Combate entre {jug1.Nombre} y {jug2.Nombre}");
 
         while (jug1.Durabilidad > 0 && jug2.Durabilidad > 0)
         {

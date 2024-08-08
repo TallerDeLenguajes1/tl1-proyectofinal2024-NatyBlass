@@ -19,7 +19,6 @@ namespace EspacioPartidaEHistorial //me daba un error al compilar sin un namespa
 
     }
 
-
 public class HistorialJson
 {
     private readonly string ArchivoPartidas = "partidas.json";
@@ -120,7 +119,6 @@ public class HistorialJson
             
         }
     }
-
 
 }
 

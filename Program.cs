@@ -15,3 +15,7 @@ ComplementoGrafico.MostrarLineasDivisorias();
 MenuYJuego menu = new MenuYJuego(historialJson);
 menu.MostrarMenu();
 
+//Voy a mantener la consola abierta para utilizarlo como forma de control
+
+//Console.WriteLine("Presione cualquier tecla para salir....");
+//Console.ReadKey();

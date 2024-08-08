@@ -48,6 +48,13 @@ public class MenuYJuego
 
         while (continuar)
         {
+            Console.WriteLine($"Enemigos {partida.Personajes.Count}");
+            if (partida.Personajes.Count < 9)
+            {
+                Console.WriteLine("La lista de personajes no contiene suficientes enemigos para el combate.");
+                return;
+            }
+
             for(int i = 0; i < 9; i++)
             {
                 var enemigo = partida.Personajes[i];
@@ -74,7 +81,7 @@ public class MenuYJuego
                 
                 ComplementoGrafico.MostrarLineasDivisorias();
                 Console.WriteLine("Presione 'Enter' para ir al siguiente combate...");
-                while(Console.ReadKey(true).Key != ConsoleKey.Enter);
+                Console.ReadKey();
             }
                 
             if (partida.Vidas == 0)
@@ -117,25 +124,28 @@ public class MenuYJuego
         
         nickname = Console.ReadLine();
 
-        //Traje esto de Program para que directamente desde esta clase pueda realizar un método de Juego o ContinuarJuego
+        Console.WriteLine("Nickname ingresado: " + nickname);
 
-        PersonajesJson personajesJson = new PersonajesJson();
-        List<GeneracionPersonaje> personajes;
+        //Console.ReadKey();
 
-        if (personajesJson.Existe("personajes.json"))
+        FabricaDePersonajes fabricaDePersonajes = new FabricaDePersonajes();
+        
+        try
         {
-            personajes = personajesJson.LeerPjs("personajes.Json");
+            await fabricaDePersonajes.ObtenerYGuardarPersonajes();
         }
-        else
+        catch (Exception ex)
         {
-            FabricaDePersonajes fabrica = new FabricaDePersonajes();
-            personajes = new List<GeneracionPersonaje>();
-            for (int i = 0; i < 10; i++)
-            {
-                personajes.Add(await fabrica.CrearPersonaje());
-            }
+            Console.WriteLine($"Error al obtener personajes: {ex.Message}");
+            return;
+        }
 
-            personajesJson.GuardarPjs(personajes, "personajes.json");
+        List<GeneracionPersonaje> personajes = fabricaDePersonajes.LeerPjsJSON();
+
+        if (personajes.Count == 0)
+        {
+            Console.WriteLine("No se pudieron cargar personajes. El juego no continuará.");
+            return;
         }
 
         Random random = new Random();
@@ -160,6 +170,8 @@ public class MenuYJuego
             PjPrincipal = jugPrincipal,
             Vidas = vidas
         };
+
+        Console.WriteLine("Llamando a JugarPartida...");
         JugarPartida(nuevaPartida);
     }
 

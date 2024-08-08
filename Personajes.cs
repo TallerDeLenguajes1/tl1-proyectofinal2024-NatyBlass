@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 
 public class GeneracionPersonaje
@@ -62,15 +63,15 @@ public class GeneracionPersonaje
 
     public void MostrarAtributos()
     {
-        Console.WriteLine("                     ===========================PERSONAJE PRINCIPAL===========================");
-        Console.WriteLine($"                                                 NOMBRE: {Nombre}");
-        Console.WriteLine($"                                           INTELIGENCIA: {Inteligencia}");
-        Console.WriteLine($"                                                 FUERZA: {Fuerza}");
-        Console.WriteLine($"                                              VELOCIDAD: {Velocidad}");
-        Console.WriteLine($"                                                  PODER: {Poder}");
-        Console.WriteLine($"                                            DURABILIDAD: {Durabilidad}");
-        Console.WriteLine($"                                                COMBATE: {Combate}");
-        Console.WriteLine("                     =========================================================================");
+        Console.WriteLine("                                ===========================PERSONAJE PRINCIPAL===========================");
+        Console.WriteLine($"                                                            NOMBRE: {Nombre}");
+        Console.WriteLine($"                                                      INTELIGENCIA: {Inteligencia}");
+        Console.WriteLine($"                                                            FUERZA: {Fuerza}");
+        Console.WriteLine($"                                                         VELOCIDAD: {Velocidad}");
+        Console.WriteLine($"                                                             PODER: {Poder}");
+        Console.WriteLine($"                                                       DURABILIDAD: {Durabilidad}");
+        Console.WriteLine($"                                                           COMBATE: {Combate}");
+        Console.WriteLine("                                 =========================================================================");
 
     }
 
@@ -80,44 +81,81 @@ public class FabricaDePersonajes
 {
     ServicioWeb servicioWeb = new ServicioWeb();
 
+    private const string nombreArchivo = "personajes.json";
+
     //Task me permite ejecutar una operacion de forma asincronica sin "bloquear" el hilo principal
-    public async Task<GeneracionPersonaje> CrearPersonaje() //Debo ponerlo como un método asincronico para que el await no de problema
-    {
-        var personaje = await servicioWeb.GetPersonaje();
-
-        GeneracionPersonaje nuevoPersonaje = new GeneracionPersonaje
-        {
-            Nombre = personaje.name,
-            Inteligencia = TryParseInt(personaje.powerstats.intelligence),
-            Fuerza = TryParseInt(personaje.powerstats.strength),
-            Velocidad = TryParseInt(personaje.powerstats.speed),
-            Durabilidad = TryParseInt(personaje.powerstats.durability),
-            Poder = TryParseInt(personaje.powerstats.power),
-            Combate = TryParseInt(personaje.powerstats.combat),
-            Id = TryParseInt(personaje.id)
-        };
-
-        return nuevoPersonaje;
-    }
-
 
     //Voy a agregar ahora un método para que la API siempre me genere nuevos personajes y no solo la Lista fija con la que estaba trabajando.
-
-    public async Task<List<GeneracionPersonaje>> ObtenerPersonajes(string nombreArchivo, int cantPjs)
+    public async Task ObtenerYGuardarPersonajes()
     {
         List<GeneracionPersonaje> personajes = new List<GeneracionPersonaje>();
 
-        for (int i = 0; i < cantPjs; i++)
+        try
         {
-            personajes.Add(await CrearPersonaje());
+            // Crear una lista de tareas para obtener personajes desde la API
+            var tareas = new List<Task<GeneracionPersonaje>>();
+            for (int i = 0; i < 10; i++)
+            {
+                tareas.Add(CrearPersonaje());
+            }
+
+            // Esperar a que todas las tareas se completen
+            personajes.AddRange(await Task.WhenAll(tareas));
+
+            // Guardar personajes en el archivo JSON
+            PersonajesJson personajesJson = new PersonajesJson();
+            personajesJson.GuardarPjs(personajes, nombreArchivo);
+
+            Console.WriteLine("Personajes obtenidos desde la API. Guardados en archivo JSON");
         }
-
-        PersonajesJson personajesJson = new PersonajesJson();
-        personajesJson.GuardarPjs(personajes, nombreArchivo);
-
-        return personajes;
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al Obtener Personajes desde la API: {ex.Message}");
+            throw;
+        }
     }
 
+    public List<GeneracionPersonaje> LeerPjsJSON()
+    {
+        PersonajesJson personajesJson = new PersonajesJson();
+
+        if (personajesJson.Existe(nombreArchivo))
+        {
+            return personajesJson.LeerPjs(nombreArchivo);
+        }
+        else
+        {
+            Console.WriteLine("No se encontraron personajes en el archivo JSON.");
+            return new List<GeneracionPersonaje>();
+        }
+    }
+
+    public async Task<GeneracionPersonaje> CrearPersonaje() //Debo ponerlo como un método asincronico para que el await no de problema
+    {
+        try
+        {
+            var personaje = await servicioWeb.GetPersonaje();
+
+            GeneracionPersonaje nuevoPersonaje = new GeneracionPersonaje
+            {
+                Nombre = personaje.name,
+                Inteligencia = TryParseInt(personaje.powerstats.intelligence),
+                Fuerza = TryParseInt(personaje.powerstats.strength),
+                Velocidad = TryParseInt(personaje.powerstats.speed),
+                Durabilidad = TryParseInt(personaje.powerstats.durability),
+                Poder = TryParseInt(personaje.powerstats.power),
+                Combate = TryParseInt(personaje.powerstats.combat),
+                Id = TryParseInt(personaje.id)
+            };
+
+            return nuevoPersonaje;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al Crear Personaje: {ex.Message}");
+            throw;
+        }
+    }
 
     //Para Verificar antes de convertir string a enteros : - recomendación del chat gpt debido a que me dio un error de la nada - 
     private int TryParseInt(string value)

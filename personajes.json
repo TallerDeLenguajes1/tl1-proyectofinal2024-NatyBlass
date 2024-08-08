@@ -1,102 +1,112 @@
 [
-    {
-        "Inteligencia": 63,
-        "Fuerza": 53,
-        "Velocidad": 21,
-        "Durabilidad": 95,
-        "Poder": 73,
-        "Combate": 75,
-        "Id": 322,
-        "Nombre": "Hellboy"
-    },
-    {
-        "Inteligencia": 94,
-        "Fuerza": 100,
-        "Velocidad": 100,
-        "Durabilidad": 100,
-        "Poder": 100,
-        "Combate": 85,
-        "Id": 644,
-        "Nombre": "Superman"
-    },
-    {
-        "Inteligencia": 81,
-        "Fuerza": 100,
-        "Velocidad": 42,
-        "Durabilidad": 100,
-        "Poder": 40,
-        "Combate": 70,
-        "Id": 589,
-        "Nombre": "She-Hulk"
-    },
-    {
-        "Inteligencia": 88,
-        "Fuerza": 100,
-        "Velocidad": 70,
-        "Durabilidad": 99,
-        "Poder": 100,
-        "Combate": 74,
-        "Id": 425,
-        "Nombre": "Magus"
-    },
-    {
-        "Inteligencia": 88,
-        "Fuerza": 14,
-        "Velocidad": 46,
-        "Durabilidad": 60,
-        "Poder": 58,
-        "Combate": 75,
-        "Id": 228,
-        "Nombre": "Donatello"
-    },
-    {
-        "Inteligencia": 63,
-        "Fuerza": 60,
-        "Velocidad": 35,
-        "Durabilidad": 42,
-        "Poder": 74,
-        "Combate": 56,
-        "Id": 472,
-        "Nombre": "Morlun"
-    },
-    {
-        "Inteligencia": 5,
-        "Fuerza": 96,
-        "Velocidad": 10,
-        "Durabilidad": 100,
-        "Poder": 10,
-        "Combate": 30,
-        "Id": 317,
-        "Nombre": "Hawkwoman"
-    },
-    {
-        "Inteligencia": 50,
-        "Fuerza": 48,
-        "Velocidad": 42,
-        "Durabilidad": 35,
-        "Poder": 67,
-        "Combate": 60,
-        "Id": 217,
-        "Nombre": "Demogoblin"
-    },
-    {
-        "Inteligencia": 69,
-        "Fuerza": 95,
-        "Velocidad": 58,
-        "Durabilidad": 70,
-        "Poder": 73,
-        "Combate": 85,
-        "Id": 481,
-        "Nombre": "Namor"
-    },
-    {
-        "Inteligencia": 50,
-        "Fuerza": 100,
-        "Velocidad": 100,
-        "Durabilidad": 100,
-        "Poder": 77,
-        "Combate": 70,
-        "Id": 285,
-        "Nombre": "Gladiator"
-    }
+  {
+    "Inteligencia": 20,
+    "Fuerza": 11,
+    "Velocidad": 87,
+    "Durabilidad": 99,
+    "Poder": 40,
+    "Combate": 71,
+    "Id": 21,
+    "Nombre": "Ammo",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 63,
+    "Fuerza": 10,
+    "Velocidad": 67,
+    "Durabilidad": 20,
+    "Poder": 79,
+    "Combate": 80,
+    "Id": 585,
+    "Nombre": "Shadow Lass",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 88,
+    "Fuerza": 85,
+    "Velocidad": 83,
+    "Durabilidad": 100,
+    "Poder": 100,
+    "Combate": 56,
+    "Id": 252,
+    "Nombre": "Fallen One II",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 50,
+    "Fuerza": 10,
+    "Velocidad": 23,
+    "Durabilidad": 28,
+    "Poder": 45,
+    "Combate": 42,
+    "Id": 592,
+    "Nombre": "Shriek",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 63,
+    "Fuerza": 32,
+    "Velocidad": 50,
+    "Durabilidad": 100,
+    "Poder": 89,
+    "Combate": 100,
+    "Id": 717,
+    "Nombre": "Wolverine",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 50,
+    "Fuerza": 100,
+    "Velocidad": 27,
+    "Durabilidad": 100,
+    "Poder": 98,
+    "Combate": 28,
+    "Id": 728,
+    "Nombre": "Ymir",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 60,
+    "Fuerza": 85,
+    "Velocidad": 23,
+    "Durabilidad": 34,
+    "Poder": 37,
+    "Combate": 70,
+    "Id": 50,
+    "Nombre": "Atom",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 38,
+    "Fuerza": 10,
+    "Velocidad": 12,
+    "Durabilidad": 32,
+    "Poder": 22,
+    "Combate": 64,
+    "Id": 82,
+    "Nombre": "Big Daddy",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 75,
+    "Fuerza": 18,
+    "Velocidad": 25,
+    "Durabilidad": 40,
+    "Poder": 13,
+    "Combate": 70,
+    "Id": 391,
+    "Nombre": "Kingpin",
+    "Victorias": 0
+  },
+  {
+    "Inteligencia": 88,
+    "Fuerza": 11,
+    "Velocidad": 27,
+    "Durabilidad": 28,
+    "Poder": 32,
+    "Combate": 85,
+    "Id": 561,
+    "Nombre": "Robin",
+    "Victorias": 0
+  }
 ]
