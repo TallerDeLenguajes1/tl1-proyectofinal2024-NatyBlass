@@ -12,6 +12,9 @@ ComplementoGrafico.MostrarLineasDivisorias();
 ComplementoGrafico.MostrarTitulo();
 ComplementoGrafico.MostrarLineasDivisorias();
 
+IntroduccionDelJuego intro = new IntroduccionDelJuego();
+intro.MostrarIntroduccion();
+
 MenuYJuego menu = new MenuYJuego(historialJson);
 menu.MostrarMenu();
 

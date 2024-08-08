@@ -15,10 +15,11 @@ public class MenuYJuego
     {
         string opc;
 
-        Console.WriteLine("                                                     ================================");
+        Console.WriteLine("                                                     =====================================");
         Console.WriteLine("                                                         1 - INICIAR JUEGO NUEVO");
         Console.WriteLine("                                                         2 -  CONTINUAR JUEGO");
-        Console.WriteLine("                                                     ================================");
+        Console.WriteLine("                                                         3 - VER HISTORIAL DE PARTIDAS");
+        Console.WriteLine("                                                     =====================================");
         
         opc = Console.ReadLine();
 
@@ -29,6 +30,9 @@ public class MenuYJuego
                 break;
             case "2":
                 ContinuarJuego();
+                break;
+            case "3":
+                VerHistorialDePartidas();
                 break;
             default:
                 Console.WriteLine("                                             LA OPCION QUE INGRESO NO ES VALIDA");
@@ -119,28 +123,45 @@ public class MenuYJuego
     {
         string nickname;
 
-        Console.WriteLine("                                                     ================================");
-        Console.WriteLine("                                                            INGRESE SU NICKNAME");
+        Console.WriteLine("                                                     ======================================");
+        Console.WriteLine("                                                               INGRESE SU NICKNAME");
         
         nickname = Console.ReadLine();
 
         Console.WriteLine("Nickname ingresado: " + nickname);
 
-        //Console.ReadKey();
+        Console.ReadKey();
 
-        FabricaDePersonajes fabricaDePersonajes = new FabricaDePersonajes();
-        
-        try
+        // FabricaDePersonajes fabricaDePersonajes = new FabricaDePersonajes();
+        // try
+        // {
+        //     await fabricaDePersonajes.ObtenerYGuardarPersonajes();
+        // }
+        // catch (Exception ex)
+        // {
+        //     Console.WriteLine($"Error al obtener personajes: {ex.Message}");
+        //     return;
+        // }
+
+        PersonajesJson personajesJson = new PersonajesJson();
+        List<GeneracionPersonaje> personajes;
+
+        if (personajesJson.Existe("personajes.json"))
         {
-            await fabricaDePersonajes.ObtenerYGuardarPersonajes();
+            personajes = personajesJson.LeerPjs("personajes.Json");
         }
-        catch (Exception ex)
+        else
         {
-            Console.WriteLine($"Error al obtener personajes: {ex.Message}");
-            return;
+            FabricaDePersonajes fabrica = new FabricaDePersonajes();
+            personajes = new List<GeneracionPersonaje>();
+            for (int i = 0; i < 10; i++)
+            {
+                personajes.Add(await fabrica.CrearPersonaje());
+            }
+
+            personajesJson.GuardarPjs(personajes, "personajes.json");
         }
 
-        List<GeneracionPersonaje> personajes = fabricaDePersonajes.LeerPjsJSON();
 
         if (personajes.Count == 0)
         {
@@ -222,5 +243,69 @@ public class MenuYJuego
         JugarPartida(partidaParaContinuar);
     }
 
+    private void VerHistorialDePartidas()
+    {
+        List<Partida> partidasGuardadas = historialJson_.LeerPartidasGuardadas();
+
+        if (partidasGuardadas.Count == 0)
+        {
+            Console.WriteLine("                     NO HAY PARTIDAS GUARDADAS");
+            return;
+        }
+
+        Console.WriteLine("                                                     =====================================");
+        Console.WriteLine("                                                            HISTORIAL DE PARTIDAS");
+        Console.WriteLine("                                                     =====================================");
+        
+        foreach (var partida in partidasGuardadas)
+        {
+            Console.WriteLine("                                       ==============================================================");
+            Console.WriteLine($"                                                      NICKNAME: {partida.NombreUsuario}");
+            Console.WriteLine($"                                                         FECHA: {partida.Fecha}");
+            Console.WriteLine($"                                           PERSONAJE PRINCIPAL: {partida.PjPrincipal.Nombre}");
+            Console.WriteLine($"                                                     VICTORIAS: {partida.PjPrincipal.Victorias}");
+            Console.WriteLine("                                                   =====================================");
+            Console.WriteLine($"                                                              ESTADISTICAS");
+            Console.WriteLine($"                                                    - Inteligencia: {partida.PjPrincipal.Inteligencia}");
+            Console.WriteLine($"                                                    - Fuerza: {partida.PjPrincipal.Fuerza}");
+            Console.WriteLine($"                                                    - Velocidad: {partida.PjPrincipal.Velocidad}");
+            Console.WriteLine($"                                                    - Durabilidad: {partida.PjPrincipal.Durabilidad}");
+            Console.WriteLine($"                                                    - Poder: {partida.PjPrincipal.Poder}");
+            Console.WriteLine($"                                                    - Combate: {partida.PjPrincipal.Combate}");
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Presione cualquier tecla para volver al menú...");
+        Console.ReadKey();
+    }
 
 }
+
+public class IntroduccionDelJuego
+{
+    public void MostrarIntroduccion()
+    {
+        Console.WriteLine("                                  ========================================================================");
+        Console.WriteLine("                                                    BIENVENIDO A LA GUERRA DE LOS MUNDOS");
+        Console.WriteLine("                                  ========================================================================");
+        Console.WriteLine();
+        Console.WriteLine("                                    ¡Prepárate para una emocionante batalla entre héroes y villanos de");
+        Console.WriteLine("                                    los universos más épicos! En este juego, tendrás la oportunidad de");
+        Console.WriteLine("                                    luchar con personajes icónicos de Marvel, DC, Harry Potter y muchos");
+        Console.WriteLine("                                    otros mundos fascinantes.");
+        Console.WriteLine();
+        Console.WriteLine("                                    Cada personaje tiene habilidades únicas, poderes impresionantes,");
+        Console.WriteLine("                                    y una historia fascinante.");
+        Console.WriteLine();
+        Console.WriteLine("                                    ¡Que comiencen las batallas y que el mejor luchador se alce con la");
+        Console.WriteLine("                                    victoria!");
+        Console.WriteLine();
+        Console.WriteLine("                                  ========================================================================");
+        Console.WriteLine("                                                     ¡Buena suerte y que gane el mejor!");
+        Console.WriteLine("                                  ========================================================================");
+        Console.WriteLine();
+        //Console.WriteLine("Presione cualquier tecla para continuar...");
+        //Console.ReadKey();
+    }
+}
+

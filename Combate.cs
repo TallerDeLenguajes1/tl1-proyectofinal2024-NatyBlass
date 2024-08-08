@@ -32,6 +32,8 @@ public class Combate
                 return jug1;
             }
 
+            //Console.WriteLine("Segundo turno");
+
             RealizarTurno(jug2, jug1);
 
             if (jug1.Durabilidad <= 0)

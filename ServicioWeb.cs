@@ -14,6 +14,7 @@ public class ServicioWeb
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(url);
+            //client.Timeout = TimeSpan.FromSeconds(5);
             response.EnsureSuccessStatusCode();
             string responseBody = await response.Content.ReadAsStringAsync();
             Root personaje = JsonSerializer.Deserialize<Root>(responseBody);

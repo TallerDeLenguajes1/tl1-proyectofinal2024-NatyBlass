@@ -88,19 +88,18 @@ public class FabricaDePersonajes
     //Voy a agregar ahora un método para que la API siempre me genere nuevos personajes y no solo la Lista fija con la que estaba trabajando.
     public async Task ObtenerYGuardarPersonajes()
     {
-        List<GeneracionPersonaje> personajes = new List<GeneracionPersonaje>();
 
         try
         {
-            // Crear una lista de tareas para obtener personajes desde la API
-            var tareas = new List<Task<GeneracionPersonaje>>();
+            //Voy a crear la lista de personajes
+            var personajes = new List<GeneracionPersonaje>();
+
+            //Obtengo personajes desde la API
             for (int i = 0; i < 10; i++)
             {
-                tareas.Add(CrearPersonaje());
+                var personaje = await CrearPersonaje();
+                personajes.Add(personaje);
             }
-
-            // Esperar a que todas las tareas se completen
-            personajes.AddRange(await Task.WhenAll(tareas));
 
             // Guardar personajes en el archivo JSON
             PersonajesJson personajesJson = new PersonajesJson();
