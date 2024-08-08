@@ -156,7 +156,7 @@ public class FabricaDePersonajes
         }
     }
 
-    //Para Verificar antes de convertir string a enteros : - recomendación del chat gpt debido a que me dio un error de la nada - 
+    //Para Verificar antes de convertir string a enteros : - recomendación debido a que me dio un error de la nada - 
     private int TryParseInt(string value)
     {
         if (int.TryParse(value, out int result))

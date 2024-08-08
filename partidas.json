@@ -1162,5 +1162,239 @@
       "Victorias": 9
     },
     "Vidas": 3
+  },
+  {
+    "NombreUsuario": "Naty",
+    "Fecha": "2024-08-08T15:13:35.4608021-03:00",
+    "Personajes": [
+      {
+        "Inteligencia": 81,
+        "Fuerza": 18,
+        "Velocidad": 17,
+        "Durabilidad": 0,
+        "Poder": 56,
+        "Combate": 40,
+        "Id": 627,
+        "Nombre": "Spock",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 82,
+        "Fuerza": 93,
+        "Velocidad": 53,
+        "Durabilidad": 0,
+        "Poder": 27,
+        "Combate": 93,
+        "Id": 519,
+        "Nombre": "Plastic Lad",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 38,
+        "Fuerza": 10,
+        "Velocidad": 12,
+        "Durabilidad": 0,
+        "Poder": 22,
+        "Combate": 64,
+        "Id": 82,
+        "Nombre": "Big Daddy",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 41,
+        "Fuerza": 62,
+        "Velocidad": 4,
+        "Durabilidad": 0,
+        "Poder": 22,
+        "Combate": 94,
+        "Id": 447,
+        "Nombre": "Meteorite",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 80,
+        "Velocidad": 33,
+        "Durabilidad": 0,
+        "Poder": 59,
+        "Combate": 70,
+        "Id": 632,
+        "Nombre": "Starfire",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 59,
+        "Fuerza": 21,
+        "Velocidad": 80,
+        "Durabilidad": 0,
+        "Poder": 87,
+        "Combate": 30,
+        "Id": 614,
+        "Nombre": "Speedball",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 9,
+        "Fuerza": 28,
+        "Velocidad": 17,
+        "Durabilidad": 0,
+        "Poder": 53,
+        "Combate": 25,
+        "Id": 509,
+        "Nombre": "Parademon",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 63,
+        "Fuerza": 60,
+        "Velocidad": 25,
+        "Durabilidad": 0,
+        "Poder": 61,
+        "Combate": 25,
+        "Id": 518,
+        "Nombre": "Plantman",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 110,
+        "Fuerza": 110,
+        "Velocidad": 110,
+        "Durabilidad": 100,
+        "Poder": 100,
+        "Combate": 30,
+        "Id": 410,
+        "Nombre": "Living Tribunal",
+        "Victorias": 9
+      }
+    ],
+    "PjPrincipal": {
+      "Inteligencia": 110,
+      "Fuerza": 110,
+      "Velocidad": 110,
+      "Durabilidad": 100,
+      "Poder": 100,
+      "Combate": 30,
+      "Id": 410,
+      "Nombre": "Living Tribunal",
+      "Victorias": 9
+    },
+    "Vidas": 3
+  },
+  {
+    "NombreUsuario": "Naty",
+    "Fecha": "2024-08-08T16:01:26.8490544-03:00",
+    "Personajes": [
+      {
+        "Inteligencia": 88,
+        "Fuerza": 2,
+        "Velocidad": 34,
+        "Durabilidad": 0,
+        "Poder": 56,
+        "Combate": 6,
+        "Id": 199,
+        "Nombre": "Danny Cooper",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 88,
+        "Fuerza": 2,
+        "Velocidad": 34,
+        "Durabilidad": 0,
+        "Poder": 56,
+        "Combate": 6,
+        "Id": 199,
+        "Nombre": "Danny Cooper",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 50,
+        "Fuerza": 48,
+        "Velocidad": 27,
+        "Durabilidad": 0,
+        "Poder": 60,
+        "Combate": 28,
+        "Id": 625,
+        "Nombre": "Spider-Woman III",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 38,
+        "Fuerza": 10,
+        "Velocidad": 12,
+        "Durabilidad": 0,
+        "Poder": 22,
+        "Combate": 64,
+        "Id": 82,
+        "Nombre": "Big Daddy",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 38,
+        "Fuerza": 28,
+        "Velocidad": 42,
+        "Durabilidad": 0,
+        "Poder": 34,
+        "Combate": 28,
+        "Id": 580,
+        "Nombre": "Scorpia",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 22,
+        "Fuerza": 32,
+        "Velocidad": 27,
+        "Durabilidad": 0,
+        "Poder": 63,
+        "Combate": 39,
+        "Id": 164,
+        "Nombre": "Cat II",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 63,
+        "Fuerza": 53,
+        "Velocidad": 21,
+        "Durabilidad": 0,
+        "Poder": 73,
+        "Combate": 75,
+        "Id": 322,
+        "Nombre": "Hellboy",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 82,
+        "Fuerza": 93,
+        "Velocidad": 53,
+        "Durabilidad": 0,
+        "Poder": 27,
+        "Combate": 93,
+        "Id": 519,
+        "Nombre": "Plastic Lad",
+        "Victorias": 0
+      },
+      {
+        "Inteligencia": 38,
+        "Fuerza": 10,
+        "Velocidad": 12,
+        "Durabilidad": 0,
+        "Poder": 22,
+        "Combate": 64,
+        "Id": 82,
+        "Nombre": "Big Daddy",
+        "Victorias": 0
+      }
+    ],
+    "PjPrincipal": {
+      "Inteligencia": 89,
+      "Fuerza": 90,
+      "Velocidad": 53,
+      "Durabilidad": 42,
+      "Poder": 100,
+      "Combate": 80,
+      "Id": 388,
+      "Nombre": "Kilowog",
+      "Victorias": 7
+    },
+    "Vidas": 1
   }
 ]

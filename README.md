@@ -30,3 +30,8 @@ En este mini juego, tendrás la oportunidad de utilizar todos los atributos de l
 
 1. Que el Usuario pueda elegir de una lista de personajes, cuál será el principal.
 2. Que el usuario elija en su turno si decide atacar o defenderse del próximo ataque.
+
+## API Utilizada
+
+- La API que utilicé fue https://www.superheroapi.com/ es una API de todos los superhéroes del universo del cómic. Se accede a los datos a través de una API REST. 
+- Para acceder a ella necesitas una cuenta de Git para obtener un token de acceso.

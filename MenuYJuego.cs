@@ -128,9 +128,9 @@ public class MenuYJuego
         
         nickname = Console.ReadLine();
 
-        Console.WriteLine("Nickname ingresado: " + nickname);
+        //Console.WriteLine("Nickname ingresado: " + nickname);
 
-        Console.ReadKey();
+        //Console.ReadKey();
 
         // FabricaDePersonajes fabricaDePersonajes = new FabricaDePersonajes();
         // try
