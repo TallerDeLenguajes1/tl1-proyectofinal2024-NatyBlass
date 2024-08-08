@@ -45,51 +45,69 @@ public class MenuYJuego
         Combate combate = new Combate();
         int durabilidad = partida.PjPrincipal.Durabilidad;
         int vidas = partida.Vidas;
-        
-        for(int i = 0; i < 9; i++)
-        {
-            var enemigo = partida.Personajes[i];
-            Console.WriteLine($"\n                                                        {partida.PjPrincipal.Nombre} vs {enemigo.Nombre}");
-            GeneracionPersonaje jugGanador = combate.IniciarCombate(partida.PjPrincipal, enemigo);
-                
-            Console.WriteLine($"{partida.PjPrincipal.Nombre} tiene {partida.PjPrincipal.Durabilidad} puntos de durabilidad");
-            Console.WriteLine($"{enemigo.Nombre} tiene {enemigo.Durabilidad} puntos de durabilidad");
+        bool continuar = true;
 
-            if(jugGanador == partida.PjPrincipal)
+        while (continuar)
+        {
+            for(int i = 0; i < 9; i++)
             {
-                Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
-                ComplementoGrafico.HasGanado();
+                var enemigo = partida.Personajes[i];
+                Console.WriteLine($"\n                                                        {partida.PjPrincipal.Nombre} vs {enemigo.Nombre}");
+                GeneracionPersonaje jugGanador = combate.IniciarCombate(partida.PjPrincipal, enemigo);
+        
+                if(jugGanador == partida.PjPrincipal)
+                {
+                    Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
+                    ComplementoGrafico.HasGanado();
+                }
+                else
+                {
+                    partida.Vidas--;
+                    Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
+                    partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
+                    ComplementoGrafico.HasPerdido();
+
+                    if (partida.Vidas == 0)
+                    {
+                        Console.WriteLine("                                         TE HAS QUEDADO SIN VIDAS");
+                        break; //Este condicionante me ayuda a salir del bucle si el personaje perdió todas las vidas
+                    }
+                }
+                
+                ComplementoGrafico.MostrarLineasDivisorias();
+                Console.WriteLine("Presione 'Enter' para ir al siguiente combate...");
+                while(Console.ReadKey(true).Key != ConsoleKey.Enter);
+            }
+                
+            if (partida.Vidas == 0)
+            {
+                Console.WriteLine("                           PERDISTE LA OPORTUNIDAD DE SER EL DIOS DE LA GUERRA DE LOS MUNDOS");
+                ComplementoGrafico.DerrotaFinal();
+                continuar = false;
             }
             else
             {
-                partida.Vidas--;
-                Console.WriteLine($"TE QUEDAN {partida.Vidas} VIDAS");
-                partida.PjPrincipal.Durabilidad = durabilidad; //Restauro la durabilidad principal de mi jugador.
-                ComplementoGrafico.HasPerdido();
+                ComplementoGrafico.GanadorFinal();
+                ComplementoGrafico.MostrarLineasDivisorias();
 
-                if (partida.Vidas == 0)
+                Console.WriteLine("Si desea continuar jugando presione 'Enter'...");
+                Console.WriteLine("Si no desea continuar jugando presione cualquier tecla...");
+                var key = Console.ReadKey().Key;
+
+                if (key != ConsoleKey.Enter)
                 {
-                    Console.WriteLine("                                         PERDISTE TODAS TUS VIDAS");
-                    break; //Este condicionante me ayuda a salir del bucle si el personaje perdió todas las vidas
+                    // Guardar la partida al finalizar
+                    continuar = false;
+                    Console.WriteLine("El juego ha terminado");
+                    historialJson_.GuardarPartida(partida);
+                    Console.WriteLine("PARTIDA GUARDADA");
+                }
+                else
+                {
+                    continuar = true;
                 }
             }
-            
-            ComplementoGrafico.MostrarLineasDivisorias();
         }
-            
-        if (partida.Vidas == 0)
-        {
-            Console.WriteLine("                           PERDISTE LA OPORTUNIDAD DE SER EL DIOS DE LA GUERRA DE LOS MUNDOS");
-            ComplementoGrafico.DerrotaFinal();
-        }
-        else
-        {
-            ComplementoGrafico.GanadorFinal();
-        }
-
-        // Guardar la partida al finalizar
-        historialJson_.GuardarPartida(partida);
-        Console.WriteLine("PARTIDA GUARDADA");
     }
 
     private async void IniciarJuegoNuevo() //async para poder usar await

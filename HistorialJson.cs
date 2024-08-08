@@ -11,15 +11,12 @@ namespace EspacioPartidaEHistorial //me daba un error al compilar sin un namespa
     private List<GeneracionPersonaje> personajes;
     private GeneracionPersonaje pjPrincipal;
     private int vidas;
-    private int rondasJugadas;
-
     public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
     public DateTime Fecha { get => fecha; set => fecha = value; }
     public List<GeneracionPersonaje> Personajes { get => personajes; set => personajes = value; }
     public GeneracionPersonaje PjPrincipal { get => pjPrincipal; set => pjPrincipal = value; }
     public int Vidas { get => vidas; set => vidas = value; }
-    public int RondasJugadas { get => rondasJugadas; set => rondasJugadas = value; }
-    
+
     }
 
 
