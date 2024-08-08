@@ -298,7 +298,6 @@ public class MenuYJuego
     }
 
 }
-
 public class IntroduccionDelJuego
 {
     public void MostrarIntroduccion()

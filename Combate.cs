@@ -100,7 +100,6 @@ public class Combate
         return ataqueExitoso;
     }
 
-
     private void MejorarAtributo(GeneracionPersonaje personaje)
     {
         ComplementoGrafico.MejoraPersonaje();
@@ -160,7 +159,6 @@ public class Combate
         }
 
     }
-
 
 
 }
